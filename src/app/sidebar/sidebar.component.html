@@ -1,0 +1,27 @@
+<h2>hi i am sidebar</h2>
+
+<table class="table table-striped">
+    <thead>
+        <th>Date</th>
+        <th>Income</th>
+        <th>Income Source</th>
+        <th>Expense</th>
+        <th>Expense Source</th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let dataItem of DepartmentList">
+           <td>{{dataItem.date}}</td>
+           <td>{{dataItem.income}}</td>
+           <td>{{dataItem.income_name}}</td>
+            <td>{{dataItem.expense}}</td>
+            <td>{{dataItem.expense_name}}</td>
+            <td>
+                <button type="button" class="btn btn-light mr-1">
+                    edit
+                </button>
+            </td>
+            
+ 
+        </tr>
+    </tbody>
+</table>

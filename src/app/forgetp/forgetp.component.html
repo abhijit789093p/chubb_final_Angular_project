@@ -1,0 +1,50 @@
+<p>forgetp works!</p>
+
+
+<form [formGroup] = "userForm" (ngSubmit)="onSubmit()">
+
+    {{userForm.value | json}}
+  
+    <hr />
+  
+    {{userModel | json}}
+  
+      <section class="vh-100" style="background-color: #020202;">
+          <div class="container py-5 h-100">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+              <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+                <div class="card shadow-2-strong" style="border-radius: 1rem;">
+                  <div class="card-body p-5 text-center">
+        
+                    <h3 class="mb-5">Log in</h3>
+        
+                    <div class="form-outline mb-4">
+                      <label class="form-label" for="typeEmailX-2">Email</label>
+                      <input type="email" class="form-control form-control-lg" formControlName="email" [(ngModel)] ="userModel.E_mail"/>  
+                      <span *ngIf="!userForm.get('email')?.valid && userForm.get('email')?.dirty" style="color: red;">Enter a valid E-mail</span>
+                    </div>
+        
+                    <div class="form-outline mb-4">
+                      <label class="form-label" for="typePasswordX-2">Enter new Password</label>
+                      <input type="password" id="typePasswordX-2" class="form-control form-control-lg" formControlName="password" [(ngModel)] ="userModel.Password"/>
+                      <span *ngIf="!userForm.get('password')?.valid && userForm.get('password')?.dirty" style="color: red;">password must be of 5 charcters</span>
+                    </div>
+        
+                    <!-- Checkbox -->
+                    <div class="form-check d-flex justify-content-center mb-4">
+                      <p class="text-center text-muted mt-5 mb-0"> Don't have any account <br> <a href="#!"
+                        class="fw-bold text-body"><u>Register here</u></a></p>
+                     
+                    </div>
+        
+                    <button [disabled]="userForm.invalid" class="btn btn-primary btn-lg btn-block" type="submit">Reset password</button>
+        
+                  
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+  </form>
+
