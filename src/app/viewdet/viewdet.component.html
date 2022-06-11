@@ -84,10 +84,13 @@
                 </div>
 
                 <div class="text-center d-grid">
-                  <a routerLink="/login"><button type="submit" [disabled]="!registrationForm.valid" class="btn btn-success">REGISTER</button></a>
+                  <button type="submit" [disabled]="!registrationForm.valid" class="btn btn-success">REGISTER</button>
                 </div>
-            
-
+                
+                <div class="text-center d-grid">
+                  <a routerLink="/login" >Login</a>               
+                 </div>
+                
             </form>
           </div>
         </div>

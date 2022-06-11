@@ -31,7 +31,29 @@ export class ViewdetComponent implements OnInit {
   
 
   postData() {
-    console.log("success");
+    
+
+              
+if (this.registrationForm.valid) {
+  //  console.log(crypto.SHA256(this.registrationForm.value.password).toString());
+  // console.log(this.registrationForm.value.ProfilePicture);
+  // this.registrationForm.value.password=crypto.SHA256(this.registrationForm.value.password).toString();
+  console.log(this.registrationForm);
+  this.service.postdata(this.registrationForm.value)
+    .subscribe((data) => {
+      {console.log(data); this.route.navigate(['/login'])};
+      alert('Registered');
+      // window.location.href=this.addr+"";
+      // if(data)
+      // {
+      // alert('Registered');
+      // window.location.href=this.addr+"";
+      // }
+      // else
+      // alert("User Already Exists")
+    });
+} else alert('Not Valid');
+}          
   }
 
-}
+

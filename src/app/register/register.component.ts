@@ -9,8 +9,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
-  register!:FormGroup;
-  userMode1 = new User(' ', ' ', ' ', ' ',0, ' ');
+ 
 
 
   constructor(private enrollment: SharedService, private route: Router) {
@@ -19,15 +18,7 @@ export class RegisterComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  onSubmit() {
-    console.log(this.userMode1.E_mail);
-    this.enrollment.postdata(this.userMode1)
-    .subscribe(
-      data => {console.log('Success!',data);this.route.navigate(['/login'])},
-      
-      error => {console.error('Error!', error);alert("invalid id password");} 
-     )
-  }
+  
 }
 
 

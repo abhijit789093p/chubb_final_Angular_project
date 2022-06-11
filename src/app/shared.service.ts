@@ -13,7 +13,7 @@ export class SharedService {
   constructor(private http:HttpClient) { }
 
   enroll(Userlog: Userlog){
-    return this.http.post<any>(this.urll+'values/LoginData', Userlog);
+    return this.http.post<any>(this.urll+'api/values/LoginData', Userlog);
   }
 
   getDeptList():Observable<any[]>{
