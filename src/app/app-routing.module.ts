@@ -6,8 +6,9 @@ import { RegisterComponent } from './register/register.component';
 import { AuthGuard } from './shared/auth.guard';
 import { AuthService } from './shared/auth.service';
 import { SidebarComponent } from './sidebar/sidebar.component';
-import { AddComponent } from './add/add.component';
+
 import { ForgetpComponent } from './forgetp/forgetp.component';
+import { ViewdetComponent } from './viewdet/viewdet.component';
 // import { AuthGuard } from './shared/auth.guard';
 
 const routes: Routes = [
@@ -35,12 +36,12 @@ const routes: Routes = [
     component: SidebarComponent
   },
   {
-    path: 'add',
-    component: AddComponent
-  },
-  {
     path: 'forgetp',
     component: ForgetpComponent
+  },
+  {
+    path: 'viewdet',
+    component: ViewdetComponent
   }
 ];
 

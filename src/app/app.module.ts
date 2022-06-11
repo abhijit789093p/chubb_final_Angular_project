@@ -11,10 +11,11 @@ import { LoginComponent } from './login/login.component';
 import { SharedService} from './shared.service';
 import{HttpClientModule} from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
-import { ReactiveFormsModule } from '@angular/forms';
-import { AddComponent } from './add/add.component';
-import { ForgetpComponent } from './forgetp/forgetp.component';
 
+
+import { ForgetpComponent } from './forgetp/forgetp.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { ViewdetComponent } from './viewdet/viewdet.component';
 
 @NgModule({
   declarations: [
@@ -24,10 +25,11 @@ import { ForgetpComponent } from './forgetp/forgetp.component';
     TopbarComponent,
     HomeComponent,
     LoginComponent,
-    AddComponent,
     ForgetpComponent,
-   
+    ViewdetComponent
+    
   ],
+
   imports: [
     BrowserModule,
     AppRoutingModule,

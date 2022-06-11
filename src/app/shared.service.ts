@@ -8,7 +8,7 @@ import { Userlog } from './userlog';
   providedIn: 'root'
 })
 export class SharedService {
-  urll="http://localhost:5000/api/";
+  urll="http://localhost:5000/";
 
   constructor(private http:HttpClient) { }
 
@@ -19,9 +19,13 @@ export class SharedService {
   getDeptList():Observable<any[]>{
     return  this.http.get<any>(`${environment.url}`+'api/values');
   }
-  addDeptlist(val:any){
+
+
+  postdata(val:any){
     return this.http.post(`${environment.url}`+'api/values',val);
   }
+
+
   updatedep(val:any){
     return this.http.put(`${environment.url}`+'api/values',val);
   }

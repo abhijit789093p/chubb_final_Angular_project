@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
-
+  register!:FormGroup;
   userMode1 = new User(' ', ' ', ' ', ' ',0, ' ');
 
 
@@ -21,7 +21,7 @@ export class RegisterComponent implements OnInit {
   }
   onSubmit() {
     console.log(this.userMode1.E_mail);
-    this.enrollment.addDeptlist(this.userMode1)
+    this.enrollment.postdata(this.userMode1)
     .subscribe(
       data => {console.log('Success!',data);this.route.navigate(['/login'])},
       

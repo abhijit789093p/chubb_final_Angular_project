@@ -1,0 +1,97 @@
+<section class="vh-200 gradient-custom bg-dark">
+  <div class="container py-5 ">
+    <div class="row justify-content-center align-items-center h-100">
+      <div class="col-12 col-lg-9 col-xl-7">
+        <div class="card shadow-4-strong card-registration" style="border-radius: 15px;">
+          <div class="card-body p-4 p-md-5">
+            <h3 class="mb-4 pb-2 pb-md-0 mb-md-5 text-center text-success" style="font-size:xx-large;font-weight:900;">
+              Register </h3>
+            <form [formGroup]="registrationForm" (ngSubmit)="postData()" class="">
+
+              <div class="row">
+                <div class="col-md-6 mb-4">
+                  <div class="form-outline">
+                    <input type="text" id="firstname" formControlName="First_name" class="form-control form-control-lg"
+                      placeholder="First Name" />
+                    <span *ngIf="registrationForm.get('First_name')?.invalid && registrationForm.get('First_name')?.dirty"
+                      style="color: red">Only string allowed</span>
+                    <!-- <label class="form-label" for="firstName">First Name</label> -->
+                  </div>
+                </div>
+
+                <div class="col-md-6 mb-4">
+                  <div class="form-outline">
+                    <input type="text" id="middleName" formControlName="Middle_name" class="form-control form-control-lg"
+                      placeholder="Middle Name" />
+                    <span *ngIf=" registrationForm.get('Middle_name')?.invalid && registrationForm.get('Middle_name')?.dirty "style="color: red">Only string allowed</span>
+                    <!-- <label class="form-label" for="lastName">Last Name</label> -->
+                  </div>
+                </div>
+
+                <div class="col-md-6 mb-4">
+                  <div class="form-outline">
+                    <input type="text" id="Last_name" formControlName="Last_name" class="form-control form-control-lg"
+                      placeholder="Last Name" />
+                    <span *ngIf="registrationForm.get('Last_name')?.invalid && registrationForm.get('Last_name')?.dirty "style="color: red">Only string allowed</span>
+                    <!-- <label class="form-label" for="lastName">Last Name</label> -->
+                  </div>
+                </div>
+              </div>
+
+            
+
+                <div class="row">
+                  <div class="col-md-6 mb-4 pb-2">
+
+                    <div class="form-outline">
+                      <input type="email" id="emails" formControlName="E_mail" placeholder="Email"
+                        class="form-control form-control-lg" />
+                      <span *ngIf="registrationForm.get('E_mail')?.invalid && registrationForm.get('E_mail')?.dirty
+              " style="color: red">Invalid Email</span>
+                      <!-- <label class="form-label" for="emailAddress">Email</label> -->
+                    </div>
+                  
+                  </div>
+
+
+                  <div class="col-md-6 mb-4 pb-2">
+
+                    <div class="form-outline">
+                      <input type="text" class="form-control form-control-lg" id="mobile" formControlName="mob_no"
+                        placeholder="Mobile Number" />
+                      <span *ngIf="
+                        registrationForm.get('mob_no')?.invalid &&
+                        registrationForm.get('mob_no')?.dirty
+                      " style="color: red">only numbers allowed</span>
+                      <!-- <label class="form-label" for="phoneNumber">Phone Number</label> -->
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-6 mb-4 pb-2">
+                    <div class="form-outline">
+                      <input type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                        class="form-control form-control-lg" id="password" formControlName="Password"
+                        placeholder="Password" />
+                      <span
+                        *ngIf=" registrationForm.get('Password')?.invalid && registrationForm.get('Password')?.dirty"
+                        style="color: red">
+                        Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more
+                        characters</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="text-center d-grid">
+                  <button type="submit" [disabled]="!registrationForm.valid" class="btn btn-success">REGISTER</button>
+                </div>
+            
+
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
